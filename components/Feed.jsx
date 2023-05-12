@@ -16,7 +16,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
         </div>
     )
 
-}
+};
 
 const Feed = () => {
     const [searchText,setSearchText] = useState('');
@@ -27,12 +27,13 @@ const Feed = () => {
     }
 
     useEffect(() => {
-        const fetchPost = async () => {
-            const response = await fetch('/api/prompt');
-            const data = await response.jason();
+        const fetchPosts = async () => {
+            const response = await fetch('/app/api/prompt');
+            const data = await response.json();
         
             setPosts(data);
         }
+        fetchPosts();
     }, []);
 
   return (
@@ -48,7 +49,7 @@ const Feed = () => {
             />
         </form>
         <PromptCardList
-            data={[posts]}
+            data={posts}
             handleTagClick={() => []}
         />
 
