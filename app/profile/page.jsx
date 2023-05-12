@@ -13,14 +13,14 @@ const MyProfile = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             const response = await fetch(`/api/users/${session?.user.id}/posts`);
-            const data = await response.jason();
+            const data = await response.json();
         
             setPosts(data);
         }
-        if(session?.user.id)fetchPosts();
+        if(session?.user.id) fetchPosts();
     }, []);
 
-    
+
     const handleEdit = () => {
 
     }
@@ -31,7 +31,7 @@ const MyProfile = () => {
     <Profile 
         name="My"
         desc="Welcome to your Profile"
-        data={[posts]}
+        data={posts}
         handleEdit={handleEdit}
         handöeDelete={handleDelete}
     />
