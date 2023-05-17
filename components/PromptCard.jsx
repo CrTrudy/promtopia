@@ -7,7 +7,7 @@ import { usePathname, useRoute } from 'next/navigation';
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
-    const [copied,setCopied] = useState("");
+    const [copied, setCopied] = useState("");
 
     const handleCopy = () => {
         setCopied(post.prompt);

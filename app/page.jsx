@@ -1,4 +1,3 @@
-import React from 'react'
 import Feed from '@components/Feed';
 
 const Home = () => {
@@ -12,7 +11,7 @@ const Home = () => {
         <p className='desc text-center'>
             assdfadf
         </p>
-        <Feed/>
+        <Feed />
       </section>
   )
 }

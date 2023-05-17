@@ -1,10 +1,10 @@
 import PromptCard from './PromptCard';
 
-const Profile = () => {
+const Profile = ({ name, desc, data, handleEdit, handleDelete  }) => {
   return (
-    <div>
-      
-    </div>
+    <section>
+      <h1>{name}</h1>
+    </section>
   )
 }
 

@@ -19,8 +19,8 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 
 const Feed = () => {
-    const [searchText,setSearchText] = useState('');
-    const [posts, setPosts] = useState([]);
+    const [searchText, setSearchText] = useState('');
+    const [allPosts, setPosts] = useState([]);
 
     const handleSearchChange = (e) => {
 
@@ -35,6 +35,12 @@ const Feed = () => {
         }
         fetchPosts();
     }, []);
+    const handleTagClick = (tagName) => {
+        setSearchText(tagName);
+    
+        const searchResult = filterPrompts(tagName);
+        setSearchedResults(searchResult);
+      };
 
   return (
     <section className='feed'>
@@ -48,11 +54,14 @@ const Feed = () => {
                 className='search_input peer'
             />
         </form>
+        {searchText ? (
         <PromptCardList
-            data={posts}
-            handleTagClick={() => []}
+          data={searchedResults}
+          handleTagClick={handleTagClick}
         />
-
+      ) : (
+        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+      )}
     </section>
   )
 }
