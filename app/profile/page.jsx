@@ -33,7 +33,7 @@ const MyProfile = () => {
         desc="Welcome to your Profile"
         data={posts}
         handleEdit={handleEdit}
-        handöeDelete={handleDelete}
+        handleDelete={handleDelete}
     />
   )
 }
